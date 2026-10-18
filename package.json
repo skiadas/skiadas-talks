@@ -1,0 +1,15 @@
+{
+  "name": "skiadas-talks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A single place to host multiple Markdown presentations, built with Marp and deployed to GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "dev": "marp -s slides --theme-set themes --html --allow-local-files",
+    "build": "node scripts/build.mjs",
+    "preview": "npm run build && npx --yes serve dist"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.5.1"
+  }
+}
