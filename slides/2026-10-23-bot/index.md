@@ -27,16 +27,17 @@ These notes are not published in the built HTML.
 - Came to HC to teach Applied Stats
 - Started helping out in CS
 - Current focus on software development courses
+- Started Data Science program
 - Write software for college (evals, elections, scheduler)
 
 ---
 
 # Overview
 
-- Traditional CS teaching
+- Communicating with computers
 - AI writes the code
-- The role of the software developer
-- What/how to teach
+- Everyone can make simple apps
+- Teaching Data Science
 
 ---
 
@@ -48,27 +49,13 @@ Provide precise instructions for making a PB&J sandwich
 
 ---
 
-# Key learning objectives
+# Key takeaways
 
 - Break problem into smaller pieces
 - Provide precise steps
 - Computers are very literal
-- Beware of un-communicated assumptions
-
----
-
-# Complexities in SD
-
-- Essential complexities
-  - Solve the right problem
-  - Break problem into manageable pieces
-  - Create correct abstractions
-  - Verify, deploy, monitor
-- Accidental complexities
-  - Programming language syntax
-  - Obscure compiler errors
-  - Incompatible systems
-  - Undocumented behavior
+- Natural language is imprecise
+- Normal communication assumes common context
 
 ---
 
@@ -82,7 +69,7 @@ How far can I go without writing any code myself?
     - Uses an LLM model for the "thinking"
     - Provides general instructions (plan/build mode)
     - Sends user prompt and conversation history
-    - Specifies allowed "tool calls"
+    - Specifies "tool calls" (edit, list, search, run)
     - Loop driven by model responses
 
 ---
@@ -93,7 +80,6 @@ How far can I go without writing any code myself?
 - Agent to Model:
   - Here are rules to follow
   - user wants ....
-  - You can use `webfetch`, `list`, `read`, `edit`, `run`
 - Model reply: List files that end in `.css`
 - Agent to model: here they are
 - Model reply: Read file `buttons.css`
@@ -153,33 +139,125 @@ How far can I go without writing any code myself?
 
 ---
 
+| Project | Sessions | Segments | Turns |
+| --- | ---: | ---: | ---: |
+| Math Placement | 56 | 87 | 755 |
+| Psych | 59 | 66 | 750 |
+| Scheduler/Planner | 44 | 64 | 746 |
+| As Racket tutor | 8 | 11 | 336 |
+| Elections | 5 | 17 | 221 |
+| R-chat-helper | 5 | 20 | 176 |
+| Pretext | 9 | 12 | 138 |
+| Runestone | 4 | 7 | 110 |
+| octave-server | 3 | 6 | 93 |
+
+---
+
 # Takeaways
 
-- AI can write the code
-- AI can test the code
-- AI can deploy the program
+- AI can write, test, deploy the code
 - AI lacks "common sense" (bloated/inconsistent UI)
 - AI needs specific goals
-- AI is too literal
+- AI lacks common subtext
+- AI conversation size is limiting
 - AI forgets anything it wasn't trained on
 
 ---
 
-# How AI is changing development
+# AI-driven coding enables us
 
 - Everyone can get a basic app going
 - Can build simple apps quicker
 - Apps that weren't worth building before now are
+- Emergence of "micro-apps"
 - Opportunities for savings/efficiency for HC
 
 ---
 
-# AI and SD disciplines
+# Classifying interactions
 
-...
+- L1 Prompt/operator: goals, preferences, approvals, site testing, bug reports.
+- L2 Domain knowledge: exam content, institutional policy.
+- L3 Technical: code/architecture, security
+- L4 AI orchestration: stop drift, ask explanations, prevent over-engineering.
 
 ---
 
-# What about our CS classes
+# AI on our interactions
 
-...
+The premise “how far could someone go without technical knowledge?” has a nuanced answer:
+
+1. **Far enough to build a working prototype and most user-facing features.** The AI implemented substantial features from one-sentence prompts and visual feedback. L1 work was 22% of topic segments, and 11 sessions were pure L1.
+
+---
+
+2. **Domain knowledge is the first non-negotiable.** Placement cutoffs, exam content, Barb’s feedback, institutional SSO, registrar workflow, and security policy cannot be invented by the AI. L2 was 31% of segments and dominant in 12 sessions.
+
+---
+
+3. **Technical knowledge becomes the bottleneck at integration.** The AI can write the code, but it cannot reliably diagnose why the code fails inside the renderer, the browser, the database, the mail system, or the production server. L3 was 44% of segments, 60% of turns, and appeared in 61% of sessions.
+
+---
+
+4. **AI orchestration is the other hidden expertise.** L4 was a significant theme in about 28% of segments. Knowing when to stop, simplify, demand evidence, reject band-aids, and prevent over-engineering was as important as domain knowledge.
+
+---
+
+> The AI removed the need to write code, but not the need to understand systems. The technical knowledge was not used to generate code; it was used to verify, diagnose, and decide when the AI was wrong.
+
+---
+
+# Teaching Data Science
+
+- Brings together Math/Stats and CS
+- Students typically not strong in math or CS
+- Students have to code (Python, R)
+- MAT337: Statistical modeling
+  - Basic stats knowledge
+  - Programming with R
+  - Challenge for the students
+  - Learning programming distracts from the stats content
+
+---
+
+# R is fiddly
+
+- Programming language, ugly UI
+- weird errors, multiple ways of doing things
+- a lot of inappropriate documentation out there
+- help usually targets programmers
+- goal: reduce the "accidental complexities"
+
+---
+
+# R-chat-helper
+
+- A custom AI chatbot
+- Instructed to provide "reasonable" feedback
+- Knows what libraries we use in the course
+- Keeps answers short and focused
+- Answers the specific question asked
+- Provides minimal code example
+- Focuses on help with the programming part
+
+---
+
+# Learning Assistant
+
+- work in progress, a "practice companion"
+- Curriculum organized by topics
+- AI generates practice problems on demand
+- student can try to solve them (code). AI can run the code and provides feedback
+- A tutoring loop that gives helpful, level-aware feedback without spoiling the answer.
+- Persistent progress tracking, adaptive next-topic suggestions.
+- Could in theory apply to other disciplines
+
+---
+
+- A number of custom LLM roles:
+  - Topic designer (creates full "topic" from one-line input)
+  - Calibration critic (helps revise the topic)
+  - Exercise author (generates problem + tests)
+  - Tutor (feedback on student code)
+  - Eval judge (evaluates tutor feedback)
+  - Tag curator (organizes the topics)
