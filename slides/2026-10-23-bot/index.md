@@ -1,5 +1,5 @@
 ---
-title: Teaching CS in the age of AI
+title: Using AI
 author: Haris Skiadas
 date: 2026-01-15
 description: Presentation to the Hanover College Trustees about the effects of AI in teaching CS
