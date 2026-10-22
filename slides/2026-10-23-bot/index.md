@@ -9,7 +9,7 @@ paginate: true
 
 <!-- _class: lead -->
 
-# Teaching CS in the age of AI
+# Using AI
 
 Haris Skiadas · 2026-10-23
 
@@ -35,7 +35,7 @@ These notes are not published in the built HTML.
 # Overview
 
 - Communicating with computers
-- AI writes the code
+- AI writes the code, what do I do?
 - Everyone can make simple apps
 - Teaching Data Science
 
@@ -53,19 +53,20 @@ Provide precise instructions for making a PB&J sandwich
 
 - Break problem into smaller pieces
 - Provide precise steps
+- Anticipate all the problems
 - Computers are very literal
 - Natural language is imprecise
-- Normal communication assumes common context
+- Communication assumes common context
 
 ---
 
-# My AI summer experiment
+# My summer
 
 How far can I go without writing any code myself?
 
-- LLM model: DeepSeek v4 flash
-  - Text in, text out
-- Agent: OpenCode
+- LLM model: DeepSeek v4 Flash
+  - Good at coding tasks
+- Coding Agent: OpenCode
     - Uses an LLM model for the "thinking"
     - Provides general instructions (plan/build mode)
     - Sends user prompt and conversation history
@@ -80,32 +81,46 @@ How far can I go without writing any code myself?
 - Agent to Model:
   - Here are rules to follow
   - user wants ....
-- Model reply: List files that end in `.css`
+- Model reply: **List** files that end in `.css`
 - Agent to model: here they are
-- Model reply: Read file `buttons.css`
+- Model reply: **Read** file `buttons.css`
 - Agent to model: Here it is
-- Model reply: Web search for "color contrast rules"
+- Model reply: Web **search** for "color contrast rules"
 
 ---
 
 - Agent reply: Here are webpage contents ...
-- Model: I have two possible solutions, ask the user
+- Model: I have two possible solutions, **ask** the user
 - Agent to user: Here are two possibilities.
 - User to agent: Let's go with the first one
 - Agent to model: Here is the previous convo. User wants first option.
-- Model to agent: Edit `buttons.css` with ...
+- Model to agent: **Edit** `buttons.css` with ...
 - Agent: OK, done
 
 ---
 
-- Model: Run build process
+- Model: **Run** build process
 - Agent: Done, no errors
-- Model: Run "playwright" script
+- Model: **Run** "playwright" script
 - Agent: Here are the results (all pass)
-- Model: Run `git commit` and `git push`
+- Model: **Run** `git commit` and `git push`
 - Agent: Done, no errors
 - Model to Agent: Report back to user
 - Agent to user: Here is what I did. The website is updated
+
+---
+
+| Project | Sessions | Segments | Turns |
+| --- | ---: | ---: | ---: |
+| Math Placement | 56 | 87 | 755 |
+| Psych | 59 | 66 | 750 |
+| Scheduler/Planner | 44 | 64 | 746 |
+| R-chat-helper | 5 | 20 | 176 |
+| octave-server | 3 | 6 | 93 |
+| As Racket tutor | 8 | 11 | 336 |
+| Elections | 5 | 17 | 221 |
+| Pretext | 9 | 12 | 138 |
+| Runestone | 4 | 7 | 110 |
 
 ---
 
@@ -122,7 +137,7 @@ How far can I go without writing any code myself?
 
 ---
 
-- Octave-in-browser (MatLab alternative)
+- Octave-in-browser POC (MatLab alternative)
   - Determine what packages can be ported to WebAssembly
   - Figure out how to make plotting work
   - Deploy suitable interface
@@ -139,35 +154,23 @@ How far can I go without writing any code myself?
 
 ---
 
-| Project | Sessions | Segments | Turns |
-| --- | ---: | ---: | ---: |
-| Math Placement | 56 | 87 | 755 |
-| Psych | 59 | 66 | 750 |
-| Scheduler/Planner | 44 | 64 | 746 |
-| As Racket tutor | 8 | 11 | 336 |
-| Elections | 5 | 17 | 221 |
-| R-chat-helper | 5 | 20 | 176 |
-| Pretext | 9 | 12 | 138 |
-| Runestone | 4 | 7 | 110 |
-| octave-server | 3 | 6 | 93 |
-
----
-
 # Takeaways
 
 - AI can write, test, deploy the code
 - AI lacks "common sense" (bloated/inconsistent UI)
+- AI doesn't "see"
 - AI needs specific goals
-- AI lacks common subtext
+- AI lacks common subtext (honest)
 - AI conversation size is limiting
 - AI forgets anything it wasn't trained on
+- Human work still needed
 
 ---
 
 # AI-driven coding enables us
 
 - Everyone can get a basic app going
-- Can build simple apps quicker
+- Can build simple apps fast
 - Apps that weren't worth building before now are
 - Emergence of "micro-apps"
 - Opportunities for savings/efficiency for HC
@@ -249,7 +252,7 @@ The premise “how far could someone go without technical knowledge?” has a nu
 - AI generates practice problems on demand
 - student can try to solve them (code). AI can run the code and provides feedback
 - A tutoring loop that gives helpful, level-aware feedback without spoiling the answer.
-- Persistent progress tracking, adaptive next-topic suggestions.
+- Progress tracking, adaptive next-topic suggestions.
 - Could in theory apply to other disciplines
 
 ---
@@ -261,3 +264,12 @@ The premise “how far could someone go without technical knowledge?” has a nu
   - Tutor (feedback on student code)
   - Eval judge (evaluates tutor feedback)
   - Tag curator (organizes the topics)
+
+---
+
+# Closing
+
+- Make your own micro-apps!
+- Everyone can and should learn this
+
+Thank you
